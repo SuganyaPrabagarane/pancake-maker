@@ -131,13 +131,13 @@ const displayOrdersOnPage = (ordersObject) => {
         image.classList.add('pancake-image');
         if (order.selectedPancake === 'Classic') {
             console.log('orderid:', order.id, order.selectedPancake);
-            image.src = "/week7/pancake_3_working/classic-pancake.jpg";
+            image.src = "/classic-pancake.jpg";
         }
         else if (order.selectedPancake === 'Chocolate') {
-            image.src = "/week7/week7_exercise/practise/Chocolate-Pancakes.jpg";
+            image.src = "/Chocolate-Pancakes.jpg";
         }
         else if (order.selectedPancake === 'Blueberry') {
-            image.src = "/week7/week7_exercise/practise/pancake-blueberry.jpg";
+            image.src = "/pancake-blueberry.jpg";
         }
         image.width = 300;
         image.height = 300;
