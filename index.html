@@ -8,7 +8,7 @@
   <body>
     <div class="container">
       <div class="image-container">
-        <img src="pancake.jpeg" alt="Delicious pancakes" />
+        <img src="/image/pancake.jpeg" alt="Delicious pancakes" />
         <div class="price-banner"><span id="totalPrice">5€</span></div>
       </div>
 
@@ -16,9 +16,15 @@
         <div class="header-button">
           <h2>Customize Your Pancake</h2>
 
-          <!-- Check Order Button  
-          <button type="button" id="checkOrder">See Orders</button>
-        </div>  -->
+          <!--Check Order Button -->
+          <button
+            type="button"
+            id="checkOrder"
+            onclick="location.href='order.html'"
+          >
+            See Orders
+          </button>
+        </div>
 
         <form id="pancakeForm">
           <!-- Customer Name -->
@@ -130,16 +136,18 @@
           <button type="button" id="seeOrder">See Order</button>
 
           <!-- Confirm Order Button -->
-          <button type="button" id="confirmOrder">Confirm Order</button>
+          <button type="button" id="confirmOrder" class="confirmButton">
+            Confirm Order
+          </button>
 
-          <!-- Check Order Button -->
+          <!-- Check Order Button 
           <button
             type="button"
             id="checkOrder"
             onclick="location.href='order.html'"
           >
             See Orders
-          </button> 
+          </button>-->
 
           <!-- Check Order Button  
           <button type="button" id="checkOrder">See Orders</button> -->
@@ -147,7 +155,9 @@
           <!-- Order Summary Display -->
           <div id="orderSummary">
             <h3>Order Summary</h3>
-            <p id="summaryText">Your order details will appear here.</p>
+            <div class="orderdisplay">
+              <p id="summaryText">Your order details will appear here.</p>
+            </div>
           </div>
         </form>
       </div>

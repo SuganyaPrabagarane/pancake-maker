@@ -33,6 +33,9 @@ const changeHandler = (event) => {
 form.addEventListener("change", changeHandler);
 
 const orderSummary = () => {
+
+    confirmOrder.classList.toggle('confirmButton'); // Toggle the confirm order button
+
     const customerName = (nameInput.value).toLowerCase().trim();
     const deliveryMethod = document.querySelector(".delivery:checked");
 
@@ -50,7 +53,7 @@ const orderSummary = () => {
     summary.innerHTML = ` Name: ${customerName} <br> Pancake Type: ${pancakeType.value} <br>  Toppings: ${toppingMessage} <br> Extras: ${extraMessage} <br>  Delivery Method: ${deliveryMethod.value}`;
 
     const orderConfirmation = () => {
-
+        alert('Order is confirmed')
         const orders = JSON.parse(localStorage.getItem("pancakeOrder")) || [];
 
         let id = Date.now();
@@ -79,7 +82,6 @@ const orderSummary = () => {
 
         const ordersJSON = JSON.stringify(orders);
         localStorage.setItem("pancakeOrder", ordersJSON);
-        alert('Order is confirmed');
 
         form.reset(); // to clear the input fields
     };

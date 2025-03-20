@@ -17,7 +17,7 @@ function createRemoveButton(parentElement) {
     return removeButtons;
 }
 
-function createDropDownList(parentElement) {
+function createDropDownList(parentElement, order) {
     const dropDownList = document.createElement('select');
     dropDownList.classList.add('select-dropdownlist');
     parentElement.appendChild(dropDownList);
@@ -33,6 +33,7 @@ function createDropDownList(parentElement) {
 }
 
 function changeOrderColorByStatus(parentElement, order) {
+
     if (order.status == 'Waiting') {
         parentElement.classList.add('orderstatus-waiting');
     }
@@ -107,19 +108,19 @@ const displayOrdersOnPage = (ordersObject) => {
         removeBtn.addEventListener('click', removeOrder)
 
         const changeOrderStatus = () => {
-            if (statusDropDownList.value === 'Ready') {
+            if (statusDropDownList.value == 'Ready') {
                 order.status = 'Ready';
                 status.textContent = `Status: ${order.status}`;
-                orderList.style.color = '#010127';
+                orderList.style.backgroundColor = '#84b0d7';
 
-            } else if (statusDropDownList.value === 'Delivered') {
+            } else if (statusDropDownList.value == 'Delivered') {
                 order.status = 'Delivered';
                 status.textContent = `Status: ${order.status}`;
-                orderList.style.color = 'darkgreen';
+                orderList.style.backgroundColor = '#92e09d';
             } else {
                 order.status = 'Waiting';
                 status.textContent = `Status: ${order.status}`;
-                orderList.style.color = 'yellow';
+                orderList.style.backgroundColor = '#efef9f';
             }
 
             localStorage.setItem('pancakeOrder', JSON.stringify(ordersObject));
@@ -130,14 +131,13 @@ const displayOrdersOnPage = (ordersObject) => {
         // Upload pancake image
         image.classList.add('pancake-image');
         if (order.selectedPancake === 'Classic') {
-            console.log('orderid:', order.id, order.selectedPancake);
-            image.src = "/classic-pancake.jpg";
+            image.src = "/image/classic-pancake.jpg";
         }
         else if (order.selectedPancake === 'Chocolate') {
-            image.src = "/Chocolate-Pancakes.jpg";
+            image.src = "/image/Chocolate-Pancakes.jpg";
         }
         else if (order.selectedPancake === 'Blueberry') {
-            image.src = "/pancake-blueberry.jpg";
+            image.src = "/image/pancake-blueberry.jpg";
         }
         image.width = 300;
         image.height = 300;
