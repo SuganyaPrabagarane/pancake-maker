@@ -17,9 +17,17 @@ body {
 }
 
 .container-header {
-  background-color: #1c3f63;
+  background-color: #26486a;
   color: white;
-  height: 27vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: inset 2px 2px 2px 2px rgb(144, 23, 16);
+}
+.container {
+  padding: 10vh 50vh 0vh 50vh;
+  height: auto;
 }
 
 .header {
@@ -35,36 +43,44 @@ button {
   border-radius: 5px;
   color: white;
   font-weight: 600;
-  margin-left: 5vh;
 }
 
 button:hover {
   background-color: rgb(130, 5, 53);
 }
 
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
 #filter {
   width: 25vh;
-  height: 5vh;
+  height: 6vh;
   border-radius: 5px;
   box-shadow: inset 0 0 5px rgb(137, 100, 77);
-  /* margin-top: 1px; */
-  margin-left: 70vh;
+  justify-content: center;
 }
 
 #sortBtn {
   margin-left: 0.5vh;
   margin-top: 2px;
 }
+.searchBox {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
 input {
   font-family: inherit;
-  font-size: 1.2rem;
-  width: 70vh;
+  font-size: 1rem;
+  width: 50vh;
   height: 5.5vh;
   border-radius: 5px;
   box-shadow: inset 0 0 5px rgb(137, 100, 77);
-  margin-top: 2vh;
-  margin-left: 50vh;
-  /* justify-content: center; */
+}
+#back {
+  margin-left: 0.5vh;
 }
 
 select {
@@ -75,17 +91,10 @@ select {
   font-size: inherit;
 }
 
-/* .order-container {
-  display: flex;
-  align-items: center;
-  height: 55vh;
-} */
-
 .orders {
   width: 50vh;
-  height: 50vh;
+  min-height: 50vh;
   margin: 30px;
-  /* row-gap: 20px; */
   margin-left: 5vh;
   display: flex;
   flex: 1;
@@ -95,7 +104,7 @@ ul {
   display: block;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 30px;
   width: auto;
 }
 
@@ -105,17 +114,18 @@ li {
   align-items: center;
   margin: 40px;
   width: 120vh;
+  min-height: 40vh;
   gap: 400px;
   border-left: 5px solid #af0404;
   box-shadow: 0px 8px 10px rgb(204, 4, 4);
-  border-radius: 5px;
-  padding: 15px;
+  border-radius: 10px;
+  padding: 30px;
   position: relative;
   margin-left: 20vh;
 }
 
 li p {
-  line-height: 3.5vh;
+  line-height: 3.7vh;
   margin-left: 5vh;
 }
 
@@ -132,6 +142,8 @@ li p {
 }
 
 .removeBtn {
+  margin-top: 2vh;
+  margin-left: 5vh;
   display: block;
 }
 
@@ -152,11 +164,12 @@ li p {
 
 .pancake-image {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
   transition: all 4s ease-in-out;
+  border-radius: 20px;
 }
 
 .pancake-image:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }

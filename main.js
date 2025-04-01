@@ -47,10 +47,11 @@ const orderSummary = () => {
         (item) => item.value
     );
 
-    const toppingMessage = toppingItem.length > 0 ? toppingItem.join(',') : 'No toppings';
-    const extraMessage = extraItem.length > 0 ? extraItem.join(',') : 'No extras';
+    const toppingMessage = toppingItem.length > 0 ? toppingItem.join(',') : 'None';
+    const extraMessage = extraItem.length > 0 ? extraItem.join(',') : 'None';
+    const getCustomerName = customerName == '' ? 'Guest' : customerName;
 
-    summary.innerHTML = ` Name: ${customerName} <br> Pancake Type: ${pancakeType.value} <br>  Toppings: ${toppingMessage} <br> Extras: ${extraMessage} <br>  Delivery Method: ${deliveryMethod.value}`;
+    summary.innerHTML = ` Name: ${getCustomerName} <br> Pancake Type: ${pancakeType.value} <br>  Toppings: ${toppingMessage} <br> Extras: ${extraMessage} <br>  Delivery Method: ${deliveryMethod.value}`;
 
     const orderConfirmation = () => {
         alert('Order is confirmed')
@@ -75,7 +76,7 @@ const orderSummary = () => {
             }
         }
 
-        const newOrder = new Orders(id, customerName, pancakeType.value, toppingMessage, extraMessage, deliveryMethod.value, totalPriceDisplay.textContent, status);
+        const newOrder = new Orders(id, getCustomerName, pancakeType.value, toppingMessage, extraMessage, deliveryMethod.value, totalPriceDisplay.textContent, status);
 
         summary.innerHTML = newOrder.showInfo();
         orders.push(newOrder);
@@ -83,6 +84,7 @@ const orderSummary = () => {
         const ordersJSON = JSON.stringify(orders);
         localStorage.setItem("pancakeOrder", ordersJSON);
 
+        confirmOrder.classList.toggle('confirmButton');
         form.reset(); // to clear the input fields
     };
     confirmOrder.addEventListener("click", orderConfirmation);

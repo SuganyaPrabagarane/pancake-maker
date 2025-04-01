@@ -185,7 +185,7 @@ const backToPancakePage = () => {
 backButtonOrderPage.addEventListener("click", backToPancakePage);
 
 function errorHandling(order) {
-    if (order.length <= 0) {
+    if (order.length == 0) {
         throw new error('No orders in the list, get new orders');
     }
     console.log('The order length is:', order.length);
