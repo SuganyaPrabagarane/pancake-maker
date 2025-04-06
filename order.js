@@ -1,3 +1,4 @@
+'use strict';
 const displayOrderList = document.querySelector("#orderlist");
 const backButtonOrderPage = document.querySelector("#back");
 const searchInput = document.querySelector('#searchBox')
@@ -49,15 +50,6 @@ function changeOrderColorByStatus(parentElement, order) {
 const displayOrdersOnPage = (ordersObject) => {
 
     displayOrderList.innerHTML = '';
-
-    // Error handling is not working
-
-    // try {
-    //     errorHandling(ordersObject)
-    // }
-    // catch (error) {
-    //     console.error(error.message);
-    // }
 
     ordersObject.forEach((order) => {
 
@@ -193,6 +185,3 @@ function errorHandling(order) {
 
 
 displayOrdersOnPage(ordersObject);
-
-
-// 1. Error handling is not working

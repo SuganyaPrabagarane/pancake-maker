@@ -91,8 +91,3 @@ const orderSummary = () => {
 };
 orderButton.addEventListener("click", orderSummary);
 
-
-const checkOrderList = () => {
-    //window.location.href = 'order.html'
-};
-checkOrderButton.addEventListener("click", checkOrderList);
